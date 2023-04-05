@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Cities Weather</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Top Cities Weather</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Weather</th>
+                <th>Temperature</th>
+                <th>Unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="topCityDTO : ${cities}">
+                <td th:text="${topCityDTO.getLocalizedName()}"></td>
+                <td th:text="${topCityDTO.getWeatherText()}"></td>
+                <td th:text="${topCityDTO.getTemperatureValue()}"></td>
+                <td th:text="${topCityDTO.getTemperatureUnit()}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
