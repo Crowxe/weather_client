@@ -41,7 +41,7 @@ public class WeatherService {
 
 		RestTemplate rest = new RestTemplate();
 
-		ResponseEntity<List<TopCitiesDTO>> rateResponse = rest.exchange("http://localhost:8080/seeAllUpdated/"+group,
+		ResponseEntity<List<TopCitiesDTO>> rateResponse = rest.exchange("http://localhost:8080/topCities/seeAllUpdated/"+group,
 				HttpMethod.GET, null, new ParameterizedTypeReference<List<TopCitiesDTO>>() {
 
 				});
